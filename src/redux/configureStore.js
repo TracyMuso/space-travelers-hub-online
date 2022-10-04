@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import missionsReducer from './mission/missions';
 
 const rootReducer = combineReducers({
-  mission: missionsReducer,
+  missionsReducer,
 });
 
 const store = configureStore({

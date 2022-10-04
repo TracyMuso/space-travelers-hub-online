@@ -2,7 +2,7 @@ const baseURL = 'https://api.spacexdata.com/v3/missions';
 const FETCH_MISSIONS = 'missions/FETCH_MISSIONS';
 const JOIN_MISSION = 'missions/JOIN_MISSION';
 const LEAVE_MISSION = 'missions/LEAVE_MISSION';
-const initialState = [];
+const initialState = { missions: [], rockets: [] };
 
 export const joinMission = (id) => async (dispatch) => {
   dispatch({
@@ -20,7 +20,7 @@ export const leaveMission = (id) => async (dispatch) => {
 
 export const fetchMissions = () => async (dispatch) => {
   const response = await fetch(baseURL);
-  const { data } = await response.json();
+  const data = await response.json();
   dispatch({
     type: FETCH_MISSIONS,
     payload: data.map((mission) => ({
@@ -35,11 +35,11 @@ export const fetchMissions = () => async (dispatch) => {
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MISSIONS:
-      return { ...state, mission: action.payload };
+      return { ...state, missions: action.payload };
     case JOIN_MISSION:
       return {
         ...state,
-        mission: state.mission.map((mission) => {
+        missions: state.missions.map((mission) => {
           if (mission.id === action.payload) {
             return { ...mission, reserved: true };
           }
@@ -49,7 +49,7 @@ const missionsReducer = (state = initialState, action) => {
     case LEAVE_MISSION:
       return {
         ...state,
-        mission: state.mission.map((mission) => {
+        missions: state.missions.map((mission) => {
           if (mission.id === action.payload) {
             return { ...mission, reserved: false };
           }

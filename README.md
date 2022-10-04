@@ -118,4 +118,4 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [Mozilla](https://github.com/tinatsina/space-travelers-hub-online/blob/dev/LICENSE) licensed.
+This project is [Mozilla](./LICENSE) licensed.
