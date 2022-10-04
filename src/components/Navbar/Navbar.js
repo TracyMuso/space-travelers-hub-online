@@ -1,7 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import Rockets from '../Rockets/Rockets';
-import Missions from '../Missions/Missions';
-import MyProfile from '../MyProfile/MyProfile';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/space-logo2.png';
 
@@ -25,11 +22,6 @@ const Navbar = () => (
         </li>
       </ul>
     </nav>
-    <Routes>
-      <Route path="/" element={<Rockets />} />
-      <Route path="Missions" element={<Missions />} />
-      <Route path="MyProfile" element={<MyProfile />} />
-    </Routes>
   </>
 );
 
