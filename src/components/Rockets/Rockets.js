@@ -1,9 +1,5 @@
-import './Rockets.css';
-
 const Rockets = () => (
-  <>
-    <h1 className="greeting">Rockets Page</h1>
-  </>
+  <h1>Rocketes Page</h1>
 );
 
 export default Rockets;

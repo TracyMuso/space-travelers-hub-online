@@ -1,0 +1,43 @@
+body {
+  margin: 15px;
+}
+
+nav {
+  border-bottom: solid gray 2px;
+}
+
+nav > ul {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+}
+
+nav > ul > li {
+  list-style: none;
+  align-items: center;
+}
+
+.logo-left {
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+}
+
+.navlink-right {
+  margin-top: 2%;
+  width: 7%;
+  color: rgb(25, 110, 163);
+}
+
+.logo-left > img {
+  width: 4em;
+  margin-right: 1em;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 1em;
+  margin-top: 20px;
+  background-color: burlywood;
+  margin-right: 16px;
+}
