@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { fetchRocketList } from '../../redux/actions/rocketsActions';
+import './Rocket.css';
 
 const RocketsList = () => {
   const dispatch = useDispatch();
@@ -28,9 +29,15 @@ const RocketsList = () => {
 const Rocket = ({ name, description, flickrImages }) => (
   <>
     <li>
-      <h2>{name}</h2>
-      <p>{description}</p>
       <img src={flickrImages} alt="A rocket launching" />
+      <div>
+        <h2>{name}</h2>
+        <p>
+          <span>Booked</span>
+          {description}
+        </p>
+        <button type="button">Reserve Rocket</button>
+      </div>
     </li>
   </>
 );
