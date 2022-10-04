@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { fetchRocketList } from '../../redux/actions/rocketsActions';
 
-const Rockets = () => {
+const RocketsList = () => {
   const dispatch = useDispatch();
   const state = useSelector((state) => state.rocketReducer);
 
@@ -12,12 +13,30 @@ const Rockets = () => {
 
   return (
     <>
-      <h1>{state[0].id}</h1>
-      <h2>{state[0].name}</h2>
-      <h1>{state[0].type}</h1>
-      <h1>{state[0].flickr_images}</h1>
+      {state.map((rocket) => (
+        <Rocket
+          key={rocket.id}
+          name={rocket.name}
+          type={rocket.type}
+          flickrImages={rocket.flickr_images}
+        />
+      ))}
     </>
   );
 };
 
-export default Rockets;
+const Rocket = ({ name, type, flickrImages }) => (
+  <>
+    <h1>{name}</h1>
+    <h1>{type}</h1>
+    <h1>{flickrImages}</h1>
+  </>
+);
+
+Rocket.propTypes = {
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  flickrImages: PropTypes.string.isRequired,
+};
+
+export default RocketsList;
