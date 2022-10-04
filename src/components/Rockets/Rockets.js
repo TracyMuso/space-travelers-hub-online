@@ -12,30 +12,32 @@ const RocketsList = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <ul className="rocket-list-container">
       {state.map((rocket) => (
         <Rocket
           key={rocket.id}
           name={rocket.name}
-          type={rocket.type}
+          description={rocket.description}
           flickrImages={rocket.flickr_images}
         />
       ))}
-    </>
+    </ul>
   );
 };
 
-const Rocket = ({ name, type, flickrImages }) => (
+const Rocket = ({ name, description, flickrImages }) => (
   <>
-    <h1>{name}</h1>
-    <h1>{type}</h1>
-    <h1>{flickrImages}</h1>
+    <li>
+      <h2>{name}</h2>
+      <p>{description}</p>
+      <img src={flickrImages} alt="A rocket launching" />
+    </li>
   </>
 );
 
 Rocket.propTypes = {
   name: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   flickrImages: PropTypes.string.isRequired,
 };
 

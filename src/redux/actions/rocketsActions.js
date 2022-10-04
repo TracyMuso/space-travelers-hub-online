@@ -10,7 +10,7 @@ export const fetchRocketList = createAsyncThunk(FETCH_API, async () => {
   const payload = data.map((e) => ({
     id: e.id,
     name: e.rocket_name,
-    type: e.rocket_type,
+    description: e.description,
     flickr_images: e.flickr_images[0],
   }));
   return payload;
