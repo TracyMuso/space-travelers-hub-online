@@ -7,18 +7,15 @@ import Missions from './components/Missions/Missions';
 import Rockets from './components/Rockets/Rockets';
 import store from './redux/configureStore';
 
-const App = () => {
-  console.log(store);
-  return (
-    <Provider store={store}>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Rockets />} />
-        <Route path="Missions" element={<Missions />} />
-        <Route path="MyProfile" element={<MyProfile />} />
-      </Routes>
-    </Provider>
-  );
-};
+const App = () => (
+  <Provider store={store}>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={<Rockets />} />
+      <Route path="Missions" element={<Missions />} />
+      <Route path="MyProfile" element={<MyProfile />} />
+    </Routes>
+  </Provider>
+);
 
 export default App;
