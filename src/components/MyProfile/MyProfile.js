@@ -1,5 +1,22 @@
+import RocketList from './RocketList';
+import './MyProfile.css';
+
 const MyProfile = () => (
-  <h1>MyProfile</h1>
+  <>
+    <div className="profile-header-container">
+      <h2>My Missions</h2>
+      <h2>My Rockets</h2>
+    </div>
+    <div className="profile-list-container">
+      <ul>
+        {/* Missions List */}
+        <RocketList />
+      </ul>
+      <ul>
+        <RocketList />
+      </ul>
+    </div>
+  </>
 );
 
 export default MyProfile;

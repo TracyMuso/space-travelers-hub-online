@@ -1,0 +1,26 @@
+.profile-header-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-header-container > h2 {
+  width: 50%;
+  margin-left: 5%;
+}
+
+.profile-list-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-list-container > ul {
+  width: 50%;
+  margin-left: 5%;
+  list-style: none;
+  padding: 0;
+}
+
+.profile-list-container > ul > li {
+  border: solid gray 1px;
+  padding: 1em;
+}
