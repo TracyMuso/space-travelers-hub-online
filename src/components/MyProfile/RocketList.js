@@ -1,11 +1,27 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
 
-const RocketList = () => (
-  <>
-    <li>Falcon 9</li>
-    <li>Falcon Heavy</li>
-    <li>Starship</li>
-  </>
-);
+const RocketList = () => {
+  const state = useSelector((state) => state.rocketReducer);
+
+  const reservedTrue = {
+    listStyle: 'none',
+    display: 'flex',
+    flexDirection: 'row',
+  };
+
+  const reservedFalse = {
+    display: 'none',
+  };
+
+  return (
+    <>
+      {state.map((item) => (
+        <li key={item.id} style={item.reserved ? reservedTrue : reservedFalse}>
+          {item.name}
+        </li>
+      ))}
+    </>
+  );
+};
 
 export default RocketList;

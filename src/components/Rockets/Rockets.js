@@ -67,10 +67,7 @@ const Rocket = ({
       <li>
         <img src={flickrImages} alt="A rocket launching" />
         <div>
-          <h2>
-            {id}
-            {name}
-          </h2>
+          <h2>{name}</h2>
           <p>
             <span style={reserved ? spanValid : spanNull}>Booked</span>
             {description}
