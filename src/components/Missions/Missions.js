@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 /* eslint-disable arrow-body-style */
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,18 +7,13 @@ import { Button } from 'react-bootstrap';
 import './Missions.css';
 import { joinMission, fetchMissions, leaveMission } from '../../redux/mission/missions';
 
-let currentMissions = true;
-
 const Missions = () => {
   const dispatch = useDispatch();
   const missions = useSelector((state) => state.missionsReducer);
 
   useEffect(() => {
-    if (currentMissions) {
-      dispatch(fetchMissions());
-      currentMissions = !currentMissions;
-    }
-  }, []);
+    dispatch(fetchMissions());
+  }, [dispatch]);
 
   const handleJoin = (id) => {
     dispatch(joinMission(id));
@@ -41,7 +35,7 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          {missions.missions.map((mission) => (
+          {missions.map((mission) => (
             <tr key={mission.id}>
               <td>{mission.name}</td>
               <td>{mission.description}</td>
@@ -51,7 +45,7 @@ const Missions = () => {
                     <Button className="btn btn-success">Active member</Button>
                   </td>
                   <td>
-                    <Button className="btn btn-danger" onClick={handleLeave(mission.id)}>Leave Mission</Button>
+                    <Button className="btn btn-danger" onClick={() => handleLeave(mission.id)}>Leave Mission</Button>
                   </td>
                 </>
               ) : (
@@ -60,7 +54,7 @@ const Missions = () => {
                     <Button variant="outline-secondary" className="btn btn-secondary">Not a member</Button>
                   </td>
                   <td>
-                    <Button variant="outline-primary" className="btn btn-primary" onClick={handleJoin(mission.id)}>Join Mission</Button>
+                    <Button variant="outline-primary" className="btn btn-primary" onClick={() => handleJoin(mission.id)}>Join Mission</Button>
                   </td>
                 </>
               )}
