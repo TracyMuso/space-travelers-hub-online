@@ -28,7 +28,7 @@ const RocketsList = () => {
   );
 };
 
-const Rocket = ({
+export const Rocket = ({
   name, description, flickrImages, id, reserved,
 }) => {
   const dispatch = useDispatch();

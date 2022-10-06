@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/space-logo2.png';
 
@@ -11,14 +11,14 @@ const Navbar = () => (
           <h2>Space Travellers Hub</h2>
         </li>
         <li className="navlink-right">
-          <Link to="/">Rockets</Link>
+          <NavLink to="Rockets" className={({ isActive }) => (isActive ? 'link-active' : 'link')}>Rockets</NavLink>
         </li>
         <li className="navlink-right">
-          <Link to="Missions">Missions</Link>
+          <NavLink to="Missions" className={({ isActive }) => (isActive ? 'link-active' : 'link')}>Missions</NavLink>
         </li>
         <li className="vertical-line" />
         <li className="navlink-right">
-          <Link to="MyProfile">My Profile</Link>
+          <NavLink to="MyProfile" className={({ isActive }) => (isActive ? 'link-active' : 'link')}>My Profile</NavLink>
         </li>
       </ul>
     </nav>
