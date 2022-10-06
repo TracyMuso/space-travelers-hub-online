@@ -2,7 +2,7 @@ const baseURL = 'https://api.spacexdata.com/v3/missions';
 const FETCH_MISSIONS = 'missions/FETCH_MISSIONS';
 const JOIN_MISSION = 'missions/JOIN_MISSION';
 const LEAVE_MISSION = 'missions/LEAVE_MISSION';
-const initialState = { missions: [], rockets: [] };
+const initialState = [];
 
 export const joinMission = (id) => async (dispatch) => {
   dispatch({
@@ -35,7 +35,7 @@ export const fetchMissions = () => async (dispatch) => {
 const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MISSIONS:
-      return { ...state, missions: action.payload };
+      return action.payload;
     case JOIN_MISSION:
       return {
         ...state,
