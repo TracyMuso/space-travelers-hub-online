@@ -17,6 +17,16 @@ nav > ul > li {
   align-items: center;
 }
 
+/* class name for none active link */
+.link-active {
+  text-decoration: none;
+}
+
+/* class name for ACTIVE link */
+.link {
+  text-decoration: underline;
+}
+
 .logo-left {
   display: flex;
   flex-direction: row;
@@ -25,7 +35,7 @@ nav > ul > li {
 
 .navlink-right {
   margin-top: 2%;
-  width: 7%;
+  width: 10%;
   color: rgb(25, 110, 163);
 }
 
@@ -36,8 +46,8 @@ nav > ul > li {
 
 .vertical-line {
   width: 2px;
-  height: 1em;
-  margin-top: 20px;
+  height: 1.25em;
+  margin-top: 2.5%;
   background-color: burlywood;
   margin-right: 16px;
 }
