@@ -4,6 +4,9 @@
 
 ![Webapp Image](./src/components/assets/readme.png)
 
+## Video Link
+
+[Video Link](https://www.loom.com/share/794ab9a987b04ddd9c50645aab84f747)
 ## Built With
 
 - HTML & CSS
