@@ -1,4 +1,5 @@
 import RocketList from './RocketList';
+import MissionList from './MissionList';
 import './MyProfile.css';
 
 const MyProfile = () => (
@@ -9,8 +10,7 @@ const MyProfile = () => (
     </div>
     <div className="profile-list-container">
       <ul>
-        {/* Missions List */}
-        <RocketList />
+        <MissionList />
       </ul>
       <ul>
         <RocketList />

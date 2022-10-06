@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable arrow-body-style */
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -42,19 +40,19 @@ const Missions = () => {
               {mission.reserved ? (
                 <>
                   <td>
-                    <Button className="btn btn-success">Active member</Button>
+                    <Button className="btn btn-success active">Active member</Button>
                   </td>
                   <td>
-                    <Button className="btn btn-danger" onClick={() => handleLeave(mission.id)}>Leave Mission</Button>
+                    <Button className="btn btn-danger active" onClick={() => handleLeave(mission.id)}>Leave Mission</Button>
                   </td>
                 </>
               ) : (
                 <>
                   <td>
-                    <Button variant="outline-secondary" className="btn btn-secondary">Not a member</Button>
+                    <Button className="btn btn-secondary active">Not a member</Button>
                   </td>
                   <td>
-                    <Button variant="outline-primary" className="btn btn-primary" onClick={() => handleJoin(mission.id)}>Join Mission</Button>
+                    <Button className="btn btn-primary active" onClick={() => handleJoin(mission.id)}>Join Mission</Button>
                   </td>
                 </>
               )}
